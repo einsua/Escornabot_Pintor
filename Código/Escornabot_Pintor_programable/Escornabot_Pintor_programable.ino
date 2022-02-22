@@ -10,8 +10,8 @@ double angle_deg = 180.0/PI;
 double dist;
 double ang;
 double dist_eje_punta;
-double ang_arriba;
 double ang_abajo;
+double ang_arriba;
 double nmov_max;
 double espera;
 double go_pulsado;
@@ -27,8 +27,8 @@ void setup(){
     servo_11.attach(11);dist = 10;
     ang = 90;
     dist_eje_punta = 6;
+    ang_abajo = 0;
     ang_arriba = 40;
-    ang_abajo = 5;
     nmov_max = 50;
     espera = 0.2;
     servo_11.write(ang_arriba);
@@ -86,16 +86,12 @@ void loop(){
         }
         if((escornabot_program[int(i)]==2)){
             escornabot.beep(2217);
-            servo_11.write(ang_arriba);
-            _delay(espera);
             escornabot.move(-dist_eje_punta);
             escornabot.turn(-ang);
             escornabot.move(dist_eje_punta);
         }
         if((escornabot_program[int(i)]==3)){
             escornabot.beep(4434);
-            servo_11.write(ang_arriba);
-            _delay(espera);
             escornabot.move(-dist_eje_punta);
             escornabot.turn(ang);
             escornabot.move(dist_eje_punta);
@@ -105,7 +101,7 @@ void loop(){
             servo_11.write(ang_abajo);
             _delay(espera);
             escornabot.move(-dist);
-            servo_11.write(ang_abajo);
+            servo_11.write(ang_arriba);
             _delay(espera);
         }
         i += 1;
@@ -125,4 +121,3 @@ void _delay(float seconds){
 void _loop(){
     
 }
-

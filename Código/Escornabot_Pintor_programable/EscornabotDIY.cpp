@@ -228,4 +228,3 @@ void EscornabotDIY::fixReversed()
 {
 	_isReversed = true;
 }
-
