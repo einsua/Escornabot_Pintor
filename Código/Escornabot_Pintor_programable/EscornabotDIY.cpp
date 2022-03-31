@@ -11,7 +11,7 @@ EscornabotDIY::EscornabotDIY() {
 	pinMode(STEPPERMOTOR_L_IN1, OUTPUT);
 	pinMode(STEPPERMOTOR_L_IN2, OUTPUT);
 	pinMode(STEPPERMOTOR_L_IN3, OUTPUT);
-	pinMode(STEPPERMOTOR_L_IN2, OUTPUT);
+	pinMode(STEPPERMOTOR_L_IN4, OUTPUT);
 	pinMode(STEPPERMOTOR_R_IN1, OUTPUT);
 	pinMode(STEPPERMOTOR_R_IN2, OUTPUT);
 	pinMode(STEPPERMOTOR_R_IN3, OUTPUT);
@@ -228,3 +228,4 @@ void EscornabotDIY::fixReversed()
 {
 	_isReversed = true;
 }
+

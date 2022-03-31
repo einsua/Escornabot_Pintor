@@ -24,14 +24,15 @@ char escornabot_program[100];
 
 
 void setup(){
-    servo_11.attach(11);dist = 10;
+    dist = 10;
     ang = 90;
     dist_eje_punta = 6;
     ang_abajo = 0;
     ang_arriba = 40;
     nmov_max = 50;
     espera = 0.2;
-    servo_11.write(ang_arriba);
+    servo_11.attach(11); // init pin
+    servo_11.write(ang_arriba); // write to servo
     escornabot.beep(4699);
     
 }
@@ -78,10 +79,10 @@ void loop(){
     {
         if((escornabot_program[int(i)]==1)){
             escornabot.beep(2637);
-            servo_11.write(ang_abajo);
+            servo_11.write(ang_abajo); // write to servo
             _delay(espera);
             escornabot.move(dist);
-            servo_11.write(ang_arriba);
+            servo_11.write(ang_arriba); // write to servo
             _delay(espera);
         }
         if((escornabot_program[int(i)]==2)){
@@ -98,10 +99,10 @@ void loop(){
         }
         if((escornabot_program[int(i)]==4)){
             escornabot.beep(3520);
-            servo_11.write(ang_abajo);
+            servo_11.write(ang_abajo); // write to servo
             _delay(espera);
             escornabot.move(-dist);
-            servo_11.write(ang_arriba);
+            servo_11.write(ang_arriba); // write to servo
             _delay(espera);
         }
         i += 1;
@@ -121,3 +122,4 @@ void _delay(float seconds){
 void _loop(){
     
 }
+
